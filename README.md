@@ -10,7 +10,6 @@ Vous devez avoir ces logiciels installés sur votre machine pour faire tourner l
 
 * nodeJS version 4+
 * RubyGem version 2+
-* GulpJS 
 
 ## Initialisation
 
