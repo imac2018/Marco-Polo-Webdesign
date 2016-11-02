@@ -2,7 +2,7 @@
 
 > La route vers la soie
 
-![accueil](app/images/background.gif)
+![accueil](background.gif)
 
 ## pré-requis
 
