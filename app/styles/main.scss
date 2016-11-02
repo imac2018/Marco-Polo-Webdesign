@@ -58,3 +58,132 @@ header{
     }
   }
 }
+
+// PAGE ETAPE
+
+  main{
+    width: 100vw;
+    height: 100vh;
+    background: #f77363;
+    display: flex;
+    flex-direction : column;
+    align-items :center;
+    justify-content : center;
+
+    nav{
+      display: flex;
+      align-items :center;
+      justify-content : space-between;
+      width: 95%;
+      font-family: $sintony;
+      color: #f8f8f8;
+      h3{
+        color: #f8f8f8;
+      }
+      button{
+        border-radius: 0px;
+        background: none;
+        border: 2px solid #f8f8f8;
+        color: #f8f8f8;
+        font-family: $sintony;
+        padding: 10px 15px;
+        &:before {
+          content: "|||";
+          @include transform(rotate(90deg));
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h2{
+      font-family: $sintony;
+      font-weight: 700;
+      color: $red;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin: 0;  
+
+    }
+    h1{
+      font-family: $rufina;
+      font-weight: 700;
+      color: $red;
+      font-size: 10em;
+      margin: 0;
+    }
+    h3{
+      font-family: $sintony;
+      font-weight: 400;
+      color: $red;
+      margin: 0;
+    }
+    button{
+      background: $red;
+      font-family: $sintony;
+      color: #f8f8f8;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+    }
+    ul.route{
+      position: fixed;
+      right: 7%;
+      top: 48%;
+      li{
+        list-style-type: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        margin: 30px 0;
+        background: #f77363;
+        p{
+          margin-left: 15px;
+          margin-top: -4px;
+          font-family: $sintony;
+          color: #aeaeae;
+        }
+        &:before{
+          content: "";
+          width: 2px;
+          height: 30px;
+          background: #000;
+          position: absolute;
+          left: 45px;
+          margin-top: 11px;
+        }
+        &:hover{
+          cursor: pointer;
+          background: #fff;
+          border: 1px solid #fff;
+          p{
+            color: #efefef;
+          }
+        }
+      }
+      li:last-child{
+        &:before{
+          opacity: 0;
+        }
+      }
+      li.active{
+        border-color: #fff;
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+
+        p{
+          color: #fff;
+        }
+
+        &:hover{
+          cursor: pointer !important;
+          background: #f77363;
+          border-color: #fff;
+        }
+      }
+    }
+  } 
+
+
+
