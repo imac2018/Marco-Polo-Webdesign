@@ -2,6 +2,8 @@
 
 > La route vers la soie
 
+![accueil](app/images/background.gif)
+
 ## pré-requis
 
 Vous devez avoir ces logiciels installés sur votre machine pour faire tourner la version de développement du site.
