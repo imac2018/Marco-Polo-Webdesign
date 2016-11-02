@@ -14,6 +14,7 @@ $red: #9d1c12;
 html,body{
   background: #000;
   width: 100%;
+  overflow-x: hidden;
 }
 
 // HEADER + SPLASH PAGE
@@ -60,16 +61,10 @@ header{
 }
 
 // PAGE ETAPE
-
   main{
     width: 100vw;
     height: 100vh;
     background: #f77363;
-    display: flex;
-    flex-direction : column;
-    align-items :center;
-    justify-content : center;
-
     nav{
       display: flex;
       align-items :center;
@@ -77,8 +72,11 @@ header{
       width: 95%;
       font-family: $sintony;
       color: #f8f8f8;
+      margin: 0 auto;
+      padding-top: 15px;
       h3{
         color: #f8f8f8;
+        opacity: 0;
       }
       button{
         border-radius: 0px;
@@ -87,48 +85,58 @@ header{
         color: #f8f8f8;
         font-family: $sintony;
         padding: 10px 15px;
+        margin: 0;
         &:before {
           content: "|||";
+          display: inline-block;
           @include transform(rotate(90deg));
           margin-right: 10px;
         }
       }
     }
+    div.content{
+      display: flex;
+      flex-direction : column;
+      align-items :center;
+      justify-content : center;
+      height: 89.63%;
+      h2{
+          font-family: $sintony;
+          font-weight: 700;
+          color: $red;
+          text-transform: uppercase;
+          font-size: 2em;
+          margin: 0 785px -15px 0;
+        }
+        h1{
+          font-family: $rufina;
+          font-weight: 700;
+          color: $red;
+          font-size: 10em;
+          margin: 0;
+        }
+        h3{
+          font-family: $sintony;
+          font-weight: 400;
+          color: $red;
+          margin: -25px 480px 0 0;
+        }
+        button{
+          background: $red;
+          font-family: $sintony;
+          color: #f8f8f8;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 25px;
+          margin: 25px 719px 0 0;
+        }
+    }
 
-    h2{
-      font-family: $sintony;
-      font-weight: 700;
-      color: $red;
-      text-transform: uppercase;
-      font-size: 2em;
-      margin: 0;  
 
-    }
-    h1{
-      font-family: $rufina;
-      font-weight: 700;
-      color: $red;
-      font-size: 10em;
-      margin: 0;
-    }
-    h3{
-      font-family: $sintony;
-      font-weight: 400;
-      color: $red;
-      margin: 0;
-    }
-    button{
-      background: $red;
-      font-family: $sintony;
-      color: #f8f8f8;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 25px;
-    }
     ul.route{
-      position: fixed;
-      right: 7%;
-      top: 48%;
+      position: absolute;
+      right: 32px;
+      top:140%;
       li{
         list-style-type: none;
         width: 10px;
@@ -137,11 +145,15 @@ header{
         border: 1px solid #000;
         margin: 30px 0;
         background: #f77363;
+        text-align: right;
         p{
-          margin-left: 15px;
+          right: 30px;
           margin-top: -4px;
-          font-family: $sintony;
+          font-family: Sintony, sans-serif;
           color: #aeaeae;
+          font-size: 0.8em;
+          position: absolute;
+          display: inline-block;
         }
         &:before{
           content: "";
@@ -168,14 +180,17 @@ header{
       }
       li.active{
         border-color: #fff;
-        width: 16px;
-        height: 16px;
-        margin-left: 5px;
-
+        width:16px;
+        height:16px;
+        margin-left: -3px;
         p{
+          margin-top: -1px;
           color: #fff;
+          font-weight: 700;
         }
-
+        &:before{
+          margin-top: 18px;
+        }
         &:hover{
           cursor: pointer !important;
           background: #f77363;
@@ -183,7 +198,4 @@ header{
         }
       }
     }
-  } 
-
-
-
+  }
