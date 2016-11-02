@@ -12,7 +12,12 @@ Vous devez avoir ces logiciels installés sur votre machine pour faire tourner l
 
 ## Initialisation
 
+Premières utilisations :
 - Installez les dépendences: `npm install --global yo gulp-cli bower`
+- Installez les modules : `npm install && bower install`
+
+
+Autre commandes :
 - Lancez `gulp serve` pour lancer la prévisualisation du site et le watcher pour les changements.
 - Lancez `bower install --save <package>` pour installer une nouvelle dépendance
 - Lancez `gulp serve:test` pour lancer les tests navigateurs
