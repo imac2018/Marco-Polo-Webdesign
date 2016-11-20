@@ -62,10 +62,18 @@ header{
 
 // PAGE ETAPE
   main{
-    width: 100vw;
-    height: 100vh;
-    background: #f77363;
+    section{
+      width: 100vw;
+      height: 100vh;
+    }
+    section:nth-child(odd){
+      background: #f77363;
+    }
+    section:nth-child(even){
+      background: #428598;
+    }
     nav{
+      position: absolute;
       display: flex;
       align-items :center;
       justify-content : space-between;
