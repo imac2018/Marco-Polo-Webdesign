@@ -137,14 +137,19 @@ header{
           border: none;
           border-radius: 25px;
           margin: 25px 719px 0 0;
+          @include transition(0.3s all ease-in-out);
+          &:hover{
+            @include transform(scale(1.1));
+            cursor: pointer;
+          }
         }
     }
 
 
     ul.route{
-      position: absolute;
+      position: fixed;
       right: 32px;
-      top:140%;
+      top: 35vh;
       li{
         list-style-type: none;
         width: 10px;
@@ -207,3 +212,117 @@ header{
       }
     }
   }
+
+// PAGE SOUS CATEGORIE
+.etape{
+  background: #f7aa66 !important;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+  .titles{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+    color: $red;
+    .number{
+      font-family: $rufina;
+      font-size: 24em;
+      font-weight: 700;
+      margin-top: -35px;
+    }
+    .text{
+      display: flex;
+      flex-direction: column;
+      h1{
+        font-family: $rufina;
+        font-size: 10em;
+        font-weight: 700;
+        margin: 0;
+      }
+      h2{
+        display: inline-block;
+        width: 940px;
+        font-family: $sintony;
+        font-size: 1em;
+        font-weight: 400;
+      }
+    }
+  }
+  .cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+    .road-card, .culture-card, .travel-card{
+      width: 406px;
+      height: 270px;
+      line-height: 370px;
+      text-align: center;
+      .card-title{
+        padding: 5px 90px;
+        display: inline;
+        font-family: $sintony;
+        font-size: 1.3em;
+        color: #f8f8f8;
+      }
+    }
+    .travel-card{
+      background: url('../images/travel-bg.jpg') no-repeat;
+      background-size: cover;
+      margin-left: 10px;
+      .card-title{
+          background-color: rgba(12, 60, 74, 0.7);
+      }
+    }
+    .culture-card{
+      background: url('../images/culture-bg.jpg') no-repeat;
+      background-size: cover;
+      margin-left: 5px;
+      margin-right: 5px;
+      .card-title{
+          background-color: rgba(14, 87, 37,0.7);
+      }
+    }
+    .road-card{
+      background: url('../images/road-bg.jpg') no-repeat;
+      background-size: cover;
+      margin-right: 10px;
+      .card-title{
+          background-color: rgba(157, 28, 18, 0.7);
+      }
+    }
+  }
+  .back{
+      position: absolute;
+      top: 35px;
+      right: 50px;
+      font-family: $sintony;
+      font-size: 1em;
+      font-weight: 400;
+      border: 2px solid #f8f8f8;
+      padding: 10px 25px;
+      border-radius: 20px;
+      color: #f8f8f8;
+      @include transition(0.3s all ease-in-out);
+      &:hover{
+        cursor: pointer;
+        background-color: #f8f8f8;
+        color: #f7aa66;
+      }
+  }
+  .border-top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    background: $red;
+    height: 15px;
+  }
+}
