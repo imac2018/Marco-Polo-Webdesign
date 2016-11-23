@@ -345,11 +345,31 @@ header{
   align-items: center;
   .header-article{
     padding: 70px 70px 35px 70px;
-    h2{
-      font-family: $sintony;
-      font-size: 1.5em;
-      color: $red;
-      font-weight: 700;
+    .back-button{
+      display: flex;
+      flex-direction: row;
+      @include transition(all 0.3s ease-in-out);
+      border-radius: 50px;
+      border: 0px solid $red;
+      &:hover{
+        cursor: pointer;
+        border: 1px solid $red;
+      }
+      h2{
+        font-family: $sintony;
+        font-size: 1.5em;
+        color: $red;
+        font-weight: 700;
+
+      }
+      div{
+        width: 70px;
+        height: auto;
+        background: url(../images/left-arrow.svg) no-repeat;
+        background-size: cover;
+        margin-right: 15px;
+        @include transform(scale(0.6));
+      }
     }
     h1{
       font-family: $rufina;
@@ -392,7 +412,7 @@ header{
   }
   .main-article{
     font-family: $sintony;
-    padding: 35px 70px 70px 70px;
+    padding: 0 70px 70px 70px;
     .section-1{
       width: 50%;
     }
@@ -421,10 +441,14 @@ header{
         flex-direction: row;
       }
       .img-article{
-        width: 50%;
-        height: 180px;
+        width: 100%;
+        height: auto;
         background: url(../images/img-article.jpg);
         background-size: cover;
+        margin-right: 25px;
+      }
+      p:nth-child(1){
+        margin:0;
       }
     }
   }
@@ -436,17 +460,26 @@ header{
     flex-direction: column;
     align-items: center;
     padding: 15px 0;
+    &:hover{
+      cursor: pointer;
+      h2, h1{
+        @include transform(translateX(-15px));
+      }
+    }
     h2{
       font-family: $sintony;
       font-size: 1.5em;
       font-weight: 400;
       color: #fff;
+      @include transition(0.2s all ease-in-out);
     }
     h1{
+      margin: 0;
       font-family: $rufina;
       font-weight: 700;
       font-size: 4.5em;
       color: #fff;
+      @include transition(0.2s all ease-in-out);
     }
   }
 }
