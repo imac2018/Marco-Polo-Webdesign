@@ -12,6 +12,7 @@ window.addEventListener('scroll', function(event){
     routeElm.style.top = '135vh';
   }
 });
+
 function eventFire(el, etype){
   if (el.fireEvent) {
     el.fireEvent('on' + etype);
