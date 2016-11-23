@@ -71,6 +71,12 @@ header{
     }
     section:nth-child(even){
       background: #428598;
+      h1, h2, h3{
+        color: #0c3c4a !important;
+      }
+      button{
+        background: #0c3c4a !important;
+      }
     }
     nav{
       position: absolute;
@@ -114,7 +120,7 @@ header{
           color: $red;
           text-transform: uppercase;
           font-size: 2em;
-          margin: 0 785px -15px 0;
+          margin: 0 0 -15px;
         }
         h1{
           font-family: $rufina;
@@ -127,7 +133,7 @@ header{
           font-family: $sintony;
           font-weight: 400;
           color: $red;
-          margin: -25px 480px 0 0;
+          margin: -25px 0 0;
         }
         button{
           background: $red;
@@ -136,7 +142,7 @@ header{
           padding: 10px 20px;
           border: none;
           border-radius: 25px;
-          margin: 25px 719px 0 0;
+          margin: 25px 0 0;
           @include transition(0.3s all ease-in-out);
           &:hover{
             @include transform(scale(1.1));
@@ -147,9 +153,9 @@ header{
 
 
     ul.route{
-      position: fixed;
+      position: absolute;
       right: 32px;
-      top: 35vh;
+      top: 135vh;
       li{
         list-style-type: none;
         width: 10px;
@@ -157,7 +163,6 @@ header{
         border-radius: 50%;
         border: 1px solid #000;
         margin: 30px 0;
-        background: #f77363;
         text-align: right;
         p{
           right: 30px;
@@ -263,14 +268,15 @@ header{
     .road-card, .culture-card, .travel-card{
       width: 406px;
       height: 270px;
-      line-height: 370px;
       text-align: center;
       .card-title{
-        padding: 5px 90px;
-        display: inline;
-        font-family: $sintony;
+        padding: 8px 0;
+        display: inline-block;
+        font-family: Sintony, sans-serif;
         font-size: 1.3em;
         color: #f8f8f8;
+        width: 100%;
+        margin-top: 190px;
       }
     }
     .travel-card{
@@ -286,6 +292,10 @@ header{
       background-size: cover;
       margin-left: 5px;
       margin-right: 5px;
+      @include transition(0.3s all ease-in-out);
+      &:hover{
+        @include transform(scale(1.1));
+      }
       .card-title{
           background-color: rgba(14, 87, 37,0.7);
       }
@@ -324,5 +334,66 @@ header{
     width: 100vw;
     background: $red;
     height: 15px;
+  }
+}
+.article{
+  width: 100vw;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7aa66 !important;
+  .header-article{
+    h2{
+      font-family: $sintony;
+      font-size: 1.5em;
+      color: $red;
+      font-weight: 700;
+    }
+    h1{
+      font-family: $rufina;
+      font-size: 3em;
+      color: $red;
+      margin: 0;
+      font-weight: 700;
+    }
+    .infos{
+      ul{
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        li{
+          list-style-type: none;
+          margin-right: 35px;
+          h1{
+            font-family: $sintony;
+            font-size: 1em;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  .main-article{
+    font-family: $sintony;
+    .article-section{
+      width: 33vw;
+      h1{
+        font-family: $rufina;
+        font-size: 2em;
+        color: $red;
+        font-weight: 700;
+      }
+      p{
+        font-size: 1em;
+        font-weight: 400;
+        color: #000;
+        line-height:36px;
+      }
+    }
+    h4{
+      font-size: 1em;
+      color: #000;
+      font-weight: 700;
+    }
   }
 }
