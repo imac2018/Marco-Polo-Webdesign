@@ -40,8 +40,8 @@
       </nav>
 
       <ul class="route">
-        <a data-scroll href="#section-1"><li><p>Mongolie</p></li></a>
-        <a data-scroll href="#section-2"><li class="active"><p>Georgie</p></li></a>
+        <a data-scroll href="#section-1"><li class="active"><p>Mongolie</p></li></a>
+        <a data-scroll href="#section-2"><li><p>Georgie</p></li></a>
         <a data-scroll href="#section-3"><li><p>Chine</p></li></a>
         <a data-scroll href="#section-4"><li><p>Inde</p></li></a>
         <a data-scroll href="#section-5"><li><p>Helloworld</p></li></a>
@@ -90,15 +90,45 @@
 
     <!-- Other -->
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
+
+    <script src="bower_components/animejs/anime.min.js"></script>
     <script>
+      
+      anime({
+        targets: '.elements-section h1',
+        translateX: '13rem',
+        rotate: {
+          value: 180,
+          duration: 1500,
+          easing: 'easeInOutQuad'
+        },
+        scale: {
+          value: 2,
+          delay: 150,
+          duration: 850,
+          easing: 'easeInOutExpo',
+        },
+        direction: 'alternate',
+        loop: true
+      });
+
       smoothScroll.init({
         selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
         selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
         speed: 500, // Integer. How fast to complete the scroll in milliseconds
         easing: 'easeInOutCubic', // Easing pattern to use
         offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-        callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        callback: function ( anchor, toggle ) {
+          // removing active class to current element
+          let currentActiveElement = document.querySelector('.route a li[class="active"]');
+          currentActiveElement.classList.remove('active');
+          // adding active class to selected element
+          let anchorIdName = anchor.getAttribute('id');
+          let routeButton = document.querySelector('.route a[href="#'+anchorIdName+'"] li');
+          routeButton.classList.add('active');
+        } // Function to run after scrolling
       });
+
     </script>
 
   </body>
