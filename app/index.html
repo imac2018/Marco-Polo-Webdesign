@@ -26,12 +26,6 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header>
-      <h1>La route de la soie</h1>
-      <h2>Visitez les pays de route de la soie</h2>
-      <a data-scroll href="#section-1"><button>Commencer l'aventure</button></a>
-    </header>
-
     <main>
        <!-- INNER HEADERS -->
       <nav>
@@ -49,8 +43,13 @@
       <!-- END INNER HEADERS -->
 
       <!-- SECTIONS -->
-      <div class="main-section">
-        <section id="section-1">
+      <div id="fullpage" class="main-section">
+        <div class="section header">
+          <h1>La route de la soie</h1>
+          <h2>Visitez les pays de route de la soie</h2>
+          <button>Commencer l'aventure</button>
+        </div>
+        <div class="section mySection" id="section-1">
           <div class="content">
             <div class="elements-section">
               <h2>étape 1 :</h2>
@@ -59,8 +58,8 @@
               <a href="mongolie.html"><button>Découvrir cette étape</button></a>
             </div>
           </div>
-        </section>
-        <section id="section-2">
+        </div>
+        <div class="section mySection" id="section-2">
           <div class="content">
             <div class="elements-section">
               <h2>étape 2 :</h2>
@@ -69,8 +68,8 @@
               <button>Découvrir cette étape</button>
             </div>
           </div>
-        </section>
-        <section id="section-3">
+        </div>
+        <div class="section mySection" id="section-3">
           <div class="content">
             <div class="elements-section">
               <h2>étape 3 :</h2>
@@ -79,7 +78,7 @@
               <button>Découvrir cette étape</button>
             </div>
           </div>
-        </section>
+        </div>
         <!-- END SECTIONS -->
       </div>
     </main>
@@ -92,42 +91,65 @@
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
 
     <script src="bower_components/animejs/anime.min.js"></script>
+    <script type="text/javascript" src="./scripts/javascript.fullPage.js"></script>
     <script>
-      
-      anime({
-        targets: '.elements-section h1',
-        translateX: '13rem',
-        rotate: {
-          value: 180,
-          duration: 1500,
-          easing: 'easeInOutQuad'
-        },
-        scale: {
-          value: 2,
-          delay: 150,
-          duration: 850,
-          easing: 'easeInOutExpo',
-        },
-        direction: 'alternate',
-        loop: true
-      });
+        fullpage.initialize('#fullpage', {
+          //navigation
+          'menu': false,
+          'anchors':[],
+          'navigation': false,
+          'slidesNavigation': false,
+          'scrollBar': false,
 
-      smoothScroll.init({
-        selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
-        selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-        speed: 500, // Integer. How fast to complete the scroll in milliseconds
-        easing: 'easeInOutCubic', // Easing pattern to use
-        offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-        callback: function ( anchor, toggle ) {
-          // removing active class to current element
-          let currentActiveElement = document.querySelector('.route a li[class="active"]');
-          currentActiveElement.classList.remove('active');
-          // adding active class to selected element
-          let anchorIdName = anchor.getAttribute('id');
-          let routeButton = document.querySelector('.route a[href="#'+anchorIdName+'"] li');
-          routeButton.classList.add('active');
-        } // Function to run after scrolling
+          //scrolling
+          'css3': false,
+          'scrollingSpeed': 700,
+          'autoScrolling': true,
+          'easingcss3': 'ease',
+          'loopHorizontal': false,
+          'touchSensitivity': 5,
+
+          //Accessibility
+          'keyboardScrolling': true,
+          'recordHistory': true,
+
+          //design
+          'controlArrows': true,
       });
+      // anime({
+      //   targets: '.elements-section h1',
+      //   translateX: '13rem',
+      //   rotate: {
+      //     value: 180,
+      //     duration: 1500,
+      //     easing: 'easeInOutQuad'
+      //   },
+      //   scale: {
+      //     value: 2,
+      //     delay: 150,
+      //     duration: 850,
+      //     easing: 'easeInOutExpo',
+      //   },
+      //   direction: 'alternate',
+      //   loop: true
+      // });
+
+      // smoothScroll.init({
+      //   selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+      //   selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+      //   speed: 500, // Integer. How fast to complete the scroll in milliseconds
+      //   easing: 'easeInOutCubic', // Easing pattern to use
+      //   offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+      //   callback: function ( anchor, toggle ) {
+      //     // removing active class to current element
+      //     let currentActiveElement = document.querySelector('.route a li[class="active"]');
+      //     currentActiveElement.classList.remove('active');
+      //     // adding active class to selected element
+      //     let anchorIdName = anchor.getAttribute('id');
+      //     let routeButton = document.querySelector('.route a[href="#'+anchorIdName+'"] li');
+      //     routeButton.classList.add('active');
+      //   } // Function to run after scrolling
+      // });
 
     </script>
 

@@ -18,7 +18,7 @@ html,body{
 }
 
 // HEADER + SPLASH PAGE
-header{
+.header{
   background: url('../images/background.gif') no-repeat;
   background-size: cover;
   width: 100vw;
@@ -62,14 +62,14 @@ header{
 
 // PAGE ETAPE
   main{
-    section{
+    .mySection{
       width: 100vw;
       height: 100vh;
     }
-    section:nth-child(odd){
+    .mySection:nth-child(even){
       background: #f77363;
     }
-    section:nth-child(even){
+    .mySection:nth-child(odd){
       background: #428598;
       h1, h2, h3{
         color: #0c3c4a !important;
