@@ -128,6 +128,7 @@ html,body{
           color: $red;
           font-size: 10em;
           margin: 0;
+          @include transform(translateX(13rem));
         }
         h3{
           font-family: $sintony;

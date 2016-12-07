@@ -4,8 +4,7 @@
   "dependencies": {
     "modernizr": "~2.8.1",
     "normalize-css": "^5.0.0",
-    "animejs": "^1.1.2",
-    "smooth-scroll": "10.0.1"
+    "animejs": "^1.1.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
