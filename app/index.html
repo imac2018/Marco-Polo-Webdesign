@@ -34,11 +34,12 @@
       </nav>
 
       <ul class="route">
-        <a data-scroll href="#section-1"><li class="active"><p>Mongolie</p></li></a>
-        <a data-scroll href="#section-2"><li><p>Georgie</p></li></a>
-        <a data-scroll href="#section-3"><li><p>Chine</p></li></a>
-        <a data-scroll href="#section-4"><li><p>Inde</p></li></a>
-        <a data-scroll href="#section-5"><li><p>Helloworld</p></li></a>
+        <a href="#section-1"><li class="active"><p>Venise</p></li></a>
+        <a href="#section-2"><li><p>Constantinople</p></li></a>
+        <a href="#section-3"><li><p>Palmir</p></li></a>
+        <a href="#section-4"><li><p>Kashgar</p></li></a>
+        <a href="#section-5"><li><p>Dunhuang</p></li></a>
+        <a href="#section-6"><li><p>Beigjing</p></li></a>
       </ul>
       <!-- END INNER HEADERS -->
 
@@ -53,7 +54,7 @@
           <div class="content">
             <div class="elements-section">
               <h2>étape 1 :</h2>
-              <h1>La Mongolie</h1>
+              <h1>Venise</h1>
               <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
               <a href="mongolie.html"><button>Découvrir cette étape</button></a>
             </div>
@@ -63,7 +64,7 @@
           <div class="content">
             <div class="elements-section">
               <h2>étape 2 :</h2>
-              <h1>La Géorgie</h1>
+              <h1>Constantinople</h1>
               <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
               <button>Découvrir cette étape</button>
             </div>
@@ -73,7 +74,37 @@
           <div class="content">
             <div class="elements-section">
               <h2>étape 3 :</h2>
-              <h1>La Chine</h1>
+              <h1>Palmir</h1>
+              <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
+              <button>Découvrir cette étape</button>
+            </div>
+          </div>
+        </div>
+        <div class="section mySection" id="section-4">
+          <div class="content">
+            <div class="elements-section">
+              <h2>étape 4 :</h2>
+              <h1>Kashgar</h1>
+              <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
+              <button>Découvrir cette étape</button>
+            </div>
+          </div>
+        </div>
+        <div class="section mySection" id="section-5">
+          <div class="content">
+            <div class="elements-section">
+              <h2>étape 5 :</h2>
+              <h1>Dunhuang</h1>
+              <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
+              <button>Découvrir cette étape</button>
+            </div>
+          </div>
+        </div>
+        <div class="section mySection" id="section-6">
+          <div class="content">
+            <div class="elements-section">
+              <h2>étape 6 :</h2>
+              <h1>Beijing</h1>
               <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
               <button>Découvrir cette étape</button>
             </div>
@@ -91,7 +122,8 @@
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
 
     <script src="bower_components/animejs/anime.min.js"></script>
-    <script type="text/javascript" src="./scripts/javascript.fullPage.js"></script>
+    <script src="./scripts/javascript.fullPage.js"></script>
+
     <script>
         fullpage.initialize('#fullpage', {
           //navigation
@@ -116,29 +148,13 @@
           //design
           'controlArrows': true,
       });
-       anime({
-         targets: '.elements-section h1',
-         translateX: [450,0],
-         easing: 'easeOutCubic',
-         loop: true
-       });
 
-      // smoothScroll.init({
-      //   selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
-      //   selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-      //   speed: 500, // Integer. How fast to complete the scroll in milliseconds
-      //   easing: 'easeInOutCubic', // Easing pattern to use
-      //   offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-      //   callback: function ( anchor, toggle ) {
-      //     // removing active class to current element
-      //     let currentActiveElement = document.querySelector('.route a li[class="active"]');
-      //     currentActiveElement.classList.remove('active');
-      //     // adding active class to selected element
-      //     let anchorIdName = anchor.getAttribute('id');
-      //     let routeButton = document.querySelector('.route a[href="#'+anchorIdName+'"] li');
-      //     routeButton.classList.add('active');
-      //   } // Function to run after scrolling
-      // });
+      //  anime({
+      //    targets: '.elements-section h1',
+      //    translateX: [450,0],
+      //    easing: 'easeOutCubic',
+      //    loop: true
+      //  });
 
     </script>
 
