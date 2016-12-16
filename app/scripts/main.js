@@ -1,6 +1,6 @@
 
 /* fixed route element with scroll event */
-var sectionTop_1 = document.body.querySelector('section#section-1').offsetTop;
+var sectionTop_1 = document.body.querySelector('#section-1').offsetTop;
 var routeElm = document.body.querySelector('ul.route');
 
 window.addEventListener('scroll', function(event){

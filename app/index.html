@@ -52,10 +52,10 @@
         <div class="section mySection" id="section-1">
           <div class="content">
             <div class="elements-section">
-              <h2>étape 1 :</h2>
+              <h2 class="left-anime">étape 1 :</h2>
               <h1>La Mongolie</h1>
-              <h3>Quand j'ai découvert ce qu'était les épices d'Asie</h3>
-              <a href="mongolie.html"><button>Découvrir cette étape</button></a>
+              <h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3>
+              <a class="left-anime" href="mongolie.html"><button class="left-anime">Découvrir cette étape</button></a>
             </div>
           </div>
         </div>
@@ -82,17 +82,29 @@
         <!-- END SECTIONS -->
       </div>
     </main>
+    <script type="text/javascript" src="./scripts/javascript.fullPage.js"></script>
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- Other -->
-    <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
-
     <script src="bower_components/animejs/anime.min.js"></script>
-    <script type="text/javascript" src="./scripts/javascript.fullPage.js"></script>
     <script>
+        function fadeIn(el) {
+          el.style.opacity = 0;
+          var last = +new Date();
+          var tick = function() {
+            el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+            last = +new Date();
+
+            if (+el.style.opacity < 1) {
+              (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+          };
+          tick();
+        }
+
         fullpage.initialize('#fullpage', {
           //navigation
           'menu': false,
@@ -115,31 +127,32 @@
 
           //design
           'controlArrows': true,
+
+          //callbacks
+          'afterLoad': function(anchorLink, index){
+            //using index
+            if(index == 2){
+              elms = document.querySelectorAll('elements-section');
+              for (i in elms){
+                fadeIn(i);
+              }
+
+              anime({
+                targets: '.elements-section h1',
+                translateX: [450,0],
+                easing: 'easeOutCubic',
+                loop: false
+              });
+
+              anime({
+                targets: '.elements-section .left-anime',
+                translateX: [-100,0],
+                easing: 'easeOutCubic',
+                loop: false
+              });
+            }
+          }
       });
-       anime({
-         targets: '.elements-section h1',
-         translateX: [450,0],
-         easing: 'easeOutCubic',
-         loop: true
-       });
-
-      // smoothScroll.init({
-      //   selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
-      //   selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-      //   speed: 500, // Integer. How fast to complete the scroll in milliseconds
-      //   easing: 'easeInOutCubic', // Easing pattern to use
-      //   offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-      //   callback: function ( anchor, toggle ) {
-      //     // removing active class to current element
-      //     let currentActiveElement = document.querySelector('.route a li[class="active"]');
-      //     currentActiveElement.classList.remove('active');
-      //     // adding active class to selected element
-      //     let anchorIdName = anchor.getAttribute('id');
-      //     let routeButton = document.querySelector('.route a[href="#'+anchorIdName+'"] li');
-      //     routeButton.classList.add('active');
-      //   } // Function to run after scrolling
-      // });
-
     </script>
 
   </body>
