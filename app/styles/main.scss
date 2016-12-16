@@ -78,6 +78,13 @@ html,body{
         background: #0c3c4a !important;
       }
     }
+    .elements-section{
+        opacity: 0;
+        @include transition(all 0.2s ease-in-out);
+    }
+    .toggleOpacity{
+        opacity: 1;
+    }
     #section-1{
       @include transition(all 0.2s ease-in-out);
       button{

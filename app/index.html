@@ -165,10 +165,8 @@
           'afterLoad': function(anchorLink, index){
             //using index
             if(index == 2){
-              elms = document.querySelectorAll('elements-section');
-              for (i in elms){
-                fadeIn(i);
-              }
+              elm = document.querySelector('#section-1 .elements-section');
+              elm.classList.add('toggleOpacity');
 
               anime({
                 targets: '.elements-section h1',
