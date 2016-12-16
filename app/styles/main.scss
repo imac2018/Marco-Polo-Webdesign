@@ -78,6 +78,18 @@ html,body{
         background: #0c3c4a !important;
       }
     }
+    #section-1{
+      @include transition(all 0.2s ease-in-out);
+      button{
+        &:hover{
+          #section-1{
+            background: url('../images/bg_asia.jpg');
+            background-size: cover;
+          }
+        }
+      }
+
+    }
     nav{
       position: absolute;
       width: 98%;
@@ -128,7 +140,6 @@ html,body{
           color: $red;
           font-size: 10em;
           margin: 0;
-          @include transform(translateX(13rem));
         }
         h3{
           font-family: $sintony;
