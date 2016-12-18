@@ -113,7 +113,6 @@
         <!-- END SECTIONS -->
       </div>
     </main>
-    <script type="text/javascript" src="./scripts/javascript.fullPage.js"></script>
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
@@ -124,22 +123,8 @@
     <script src="./scripts/javascript.fullPage.js"></script>
 
     <script>
-        function fadeIn(el) {
-          el.style.opacity = 0;
-          var last = +new Date();
-          var tick = function() {
-            el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
-            last = +new Date();
-
-            if (+el.style.opacity < 1) {
-              (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-            }
-          };
-          tick();
-        }
-
-        fullpage.initialize('#fullpage', {
           //navigation
+          fullpage.initialize('#fullpage', {
           'menu': false,
           'anchors':[],
           'navigation': false,
@@ -162,26 +147,55 @@
           'controlArrows': true,
 
           //callbacks
-          'afterLoad': function(anchorLink, index){
-            //using index
-            if(index == 2){
-              elm = document.querySelector('#section-1 .elements-section');
-              elm.classList.add('toggleOpacity');
+          'onLeave': function(index, nextIndex, direction){
+            setTimeout(toggleElements, 200);
 
-              anime({
-                targets: '.elements-section h1',
-                translateX: [450,0],
-                easing: 'easeOutCubic',
-                loop: false
-              });
+            function toggleElements(){
+              if(index == 1 && direction == "down" || index == 3 && direction == "up"){
+                var elm = document.querySelector('#section-1 .elements-section');
+                var elmH1 = elm.querySelector('h1');
 
-              anime({
-                targets: '.elements-section .left-anime',
-                translateX: [-100,0],
-                easing: 'easeOutCubic',
-                loop: false
-              });
+                elm.classList.add('toggleOpacity');
+
+                var stringToletters = document.querySelector('.elements-section h1').textContent.split('');
+                document.querySelector('.elements-section h1').textContent = '';
+                for (let i of stringToletters){
+                    let span = document.createElement('span');
+                    span.appendChild(document.createTextNode(i));
+                    elmH1.appendChild(span);
+                }
+
+                var letters = elmH1.querySelectorAll('span');
+
+                for(let i of letters){
+                    console.log(i);
+                    anime({
+                      targets: i,
+                      translateX: [450,0],
+                      easing: 'easeOutCubic',
+                      loop: false
+                    })
+                }
+                // anime({
+                //   targets: '.elements-section h1',
+                //   translateX: [450,0],
+                //   easing: 'easeOutCubic',
+                //   loop: false
+                // });
+
+                anime({
+                  targets: '.elements-section .left-anime',
+                  translateX: [-100,0],
+                  easing: 'easeOutCubic',
+                  loop: false
+                });
+              }
+              if(index == 2){
+                elm = document.querySelector('#section-1 .elements-section');
+                elm.classList.remove('toggleOpacity');
+              }
             }
+
           }
       });
     </script>
