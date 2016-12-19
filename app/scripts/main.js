@@ -12,6 +12,9 @@ window.addEventListener('scroll', function(event){
     routeElm.style.top = '135vh';
   }
 });
+document.body.querySelector('.header button').addEventListener('click', function(){
+  fullpage.moveSectionDown();
+});
 
 document.body.querySelector('#section-1 button').addEventListener('mouseenter', function(){
   this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_asia.jpg")';

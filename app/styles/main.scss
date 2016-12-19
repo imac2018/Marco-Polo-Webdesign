@@ -31,11 +31,10 @@ html,body{
   color: $red;
   h1{
     font-family: $rufina;
-    font-size: 5em;
+    font-size: 15em;
     font-weight: 700;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
     margin: 0;
-    text-transform: uppercase;
   }
   h2{
     font-family: $sintony;
@@ -65,37 +64,61 @@ html,body{
     .mySection{
       width: 100vw;
       height: 100vh;
-    }
-    .mySection:nth-child(even){
       background: #f77363;
     }
-    .mySection:nth-child(odd){
-      background: #428598;
-      h1, h2, h3{
-        color: #0c3c4a !important;
-      }
-      button{
-        background: #0c3c4a !important;
-      }
-    }
-    .elements-section{
-        opacity: 0;
-        @include transition(all 0.2s ease-in-out);
+    // .mySection:nth-child(even){
+    //   background: #f77363;
+    // }
+    // .mySection:nth-child(odd){
+    //   background: #428598;
+    //   h1, h2, h3{
+    //     color: #0c3c4a !important;
+    //   }
+    //   button{
+    //     background: #0c3c4a !important;
+    //   }
+    // }
+
+    @keyframes toggleOpacityAnimation {
+      from {opacity: 0;}
+      to{opacity: 1;}
     }
     .toggleOpacity{
-        opacity: 1;
+      @include animation(toggleOpacityAnimation 1.2s cubic-bezier(0.19, 1, 0.22, 1));
+      @include animation-delay(0.7s);
+      @include animation-fill-mode(forwards);
+      // keep opacity value active after the end of the animation
+      // opacity: 1 !important;
     }
-    #section-1{
-      @include transition(all 0.2s ease-in-out);
-      button{
-        &:hover{
-          #section-1{
-            background: url('../images/bg_asia.jpg');
-            background-size: cover;
-          }
-        }
-      }
 
+    .elements-section{
+        opacity: 0;
+    }
+    @keyframes rightAnimeAnimation {
+      from {
+        @include transform(translateX(650px));
+      }
+      to {
+        @include transform(translateX(0));
+      }
+    }
+    .toggleRightAnime{
+      @include animation(rightAnimeAnimation 1.2s cubic-bezier(0.19, 1, 0.22, 1), toggleOpacityAnimation);
+      @include animation-delay(0.3s);
+      display: inline-block;
+    }
+
+    @keyframes leftAnimeAnimation {
+      from {
+        @include transform(translateX(-450px));
+      }
+      to {
+        @include transform(translateX(0));
+      }
+    }
+    .toggleLeftAnime{
+      @include animation(leftAnimeAnimation 1.2s cubic-bezier(0.19, 1, 0.22, 1));
+      @include animation-delay(0.3s);
     }
     nav{
       position: absolute;
@@ -242,9 +265,9 @@ html,body{
 
 // PAGE SOUS CATEGORIE
 .etape{
-  background: #f7aa66 !important;
+  background: #f77363 !important;
   width: 100vw;
-  height: inherit;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,11 +280,12 @@ html,body{
     vertical-align: center;
     justify-content: center;
     color: $red;
+
     .number{
-      font-family: $rufina;
-      font-size: 24em;
+      font-family: $sintony;
+      font-size: 15em;
       font-weight: 700;
-      margin-top: -35px;
+      margin-top: 45px;
     }
     .text{
       display: flex;
@@ -270,14 +294,15 @@ html,body{
         font-family: $rufina;
         font-size: 10em;
         font-weight: 700;
-        margin: 0;
+        margin: 0 0 -10px 0;
       }
       h2{
+        margin: 0;
         display: inline-block;
-        width: 940px;
         font-family: $sintony;
         font-size: 1em;
         font-weight: 400;
+        width: 700px;
       }
     }
   }
@@ -327,8 +352,12 @@ html,body{
       background: url('../images/road-bg.jpg') no-repeat;
       background-size: cover;
       margin-right: 10px;
+      @include transition(0.3s all ease-in-out);
+      &:hover{
+        @include transform(scale(1.1));
+      }
       .card-title{
-          background-color: rgba(157, 28, 18, 0.7);
+          background-color: rgba(182, 102, 31, 0.7);
       }
     }
   }
@@ -339,26 +368,23 @@ html,body{
       font-family: $sintony;
       font-size: 1em;
       font-weight: 400;
-      border: 2px solid #f8f8f8;
       padding: 10px 25px;
-      border-radius: 20px;
-      color: #f8f8f8;
+      color: $red;
       @include transition(0.3s all ease-in-out);
       &:hover{
         cursor: pointer;
-        background-color: #f8f8f8;
-        color: #f7aa66;
+        @include transform(translateX(-10px));
       }
       &:before{
         content: "";
         display: inline-block;
         width: 55px;
         height: 47px;
-        background: url(../images/left-arrow-white.svg) no-repeat;
+        background: url(../images/left-arrow.svg) no-repeat;
         background-size: cover;
         position: absolute;
-        margin-top: -15px;
-        margin-left: -70px;
+        margin-top: -16px;
+        margin-left: -55px;
         @include transform(scale(0.6));
       }
   }
@@ -371,7 +397,33 @@ html,body{
     height: 15px;
   }
 }
+// PAGE ARTICLE
+.color-orange{
+  background-color: #f7aa66 !important;
+  .header-article{
+    h1{
+      color: #B6661F;
+    }
+  }
+  .back-button{
+
+    h2{
+      color: #B6661F;
+    }
+    div{
+        background: url(../images/left-arrow-road.svg) no-repeat;
+        background-size: cover;
+    }
+  }
+  .article-section{
+    h1{
+      color: #B6661F;
+    }
+  }
+}
 .article{
+  width: 80vw;
+  margin: auto;
   height: inherit;
   display: flex;
   flex-direction: column;
@@ -383,32 +435,26 @@ html,body{
       display: inline-flex;
       flex-direction: row;
       @include transition(all 0.3s ease-in-out);
-      border-radius: 50px;
-      border: 1px solid transparent;
       padding: 0 15px 0 5px;
       &:hover{
         cursor: pointer;
-        border-color: $red;
+        @include transform(translateX(-10px));
       }
       h2{
         font-family: $sintony;
         font-size: 1.2em;
-        color: $red;
         font-weight: 700;
-
       }
       div{
         width: 60px;
         height: auto;
-        background: url(../images/left-arrow.svg) no-repeat;
-        background-size: cover;
+
         @include transform(scale(0.6));
       }
     }
     h1{
       font-family: $rufina;
       font-size: 3em;
-      color: $red;
       margin: 0;
       font-weight: 700;
     }
@@ -423,15 +469,15 @@ html,body{
           display:flex;
           flex-direction: row;
           .icon{
-            width: 25px;
-            height: 30px;
+            width: 35px;
+            height: 50px;
           }
-          .time{
-            background: url(../images/wait.svg);
-            background-size: cover;
+          .mountain{
+            background: url(../images/mountain.svg) no-repeat;
+            background-size: contain;
           }
           .location{
-            background: url(../images/location-icon.png) no-repeat;
+            background: url(../images/location.svg) no-repeat;
             background-size: contain;
           }
           h1{
@@ -454,35 +500,56 @@ html,body{
       h1{
         font-family: $rufina;
         font-size: 2em;
-        color: $red;
         font-weight: 700;
+        margin-bottom: 40px;
+        margin-top: 0;
       }
-      p{
-        font-size: 1em;
-        font-weight: 400;
-        color: #000;
-        line-height:36px;
+      .gmaps-text{
+        display: flex;
+        flex-direction: row;
+        p{
+          width: 50%;
+          font-size: 1em;
+          font-weight: 400;
+          color: #000;
+          line-height:36px;
+          margin: 0;
+        }
+        #map{
+          width: 100%;
+          padding: 20px;
+          margin:  -180px 0 0 0;
+        }
       }
     }
     h4{
       font-size: 1em;
       color: #000;
       font-weight: 700;
+      margin-bottom: 70px;
+      margin-top: 40px;
     }
     .section-2{
+      p{
+          line-height:36px;
+      }
       .img-text{
         display: flex;
         flex-direction: row;
-      }
-      .img-article{
-        width: 100%;
-        height: auto;
-        background: url(../images/img-article.jpg);
-        background-size: cover;
-        margin-right: 25px;
-      }
-      p:nth-child(1){
-        margin:0;
+        margin-bottom: 35px;
+        p{
+          width: 50%;
+          line-height:36px;
+          margin:0;
+        }
+
+        .img-article{
+          width: 100%;
+          height: auto;
+          background: url(../images/img-article.jpg);
+          background-size: cover;
+          margin-right: 25px
+        }
       }
     }
   }
@@ -491,29 +558,34 @@ html,body{
     background-size: cover;
     width:100vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    &:hover{
-      cursor: pointer;
-      h2, h1{
-        @include transform(translateX(-15px));
+    flex-direction: row;
+    .text-footer{
+      padding: 15px 0;
+      width:100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover{
+        cursor: pointer;
+        h2, h1{
+          @include transform(translateX(-15px));
+        }
       }
-    }
-    h2{
-      font-family: $sintony;
-      font-size: 1.5em;
-      font-weight: 400;
-      color: #fff;
-      @include transition(0.2s all ease-in-out);
-    }
-    h1{
-      margin: 0;
-      font-family: $rufina;
-      font-weight: 700;
-      font-size: 4.5em;
-      color: #fff;
-      @include transition(0.2s all ease-in-out);
+      h2{
+        font-family: $sintony;
+        font-size: 1em;
+        font-weight: 400;
+        color: #fff;
+        @include transition(0.2s all ease-in-out);
+      }
+      h1{
+        margin: 0;
+        font-family: $rufina;
+        font-weight: 700;
+        font-size: 3em;
+        color: #fff;
+        @include transition(0.2s all ease-in-out);
+      }
     }
   }
 }
