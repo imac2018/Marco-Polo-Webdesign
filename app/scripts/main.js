@@ -12,6 +12,7 @@ window.addEventListener('scroll', function(event){
     routeElm.style.top = '135vh';
   }
 });
+
 document.body.querySelector('.header button').addEventListener('click', function(){
   fullpage.moveSectionDown();
 });

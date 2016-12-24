@@ -5,6 +5,16 @@
 @import url('../../bower_components/normalize-css/normalize.css');
 @import "bourbon/bourbon";
 
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
 /* variables */
 $rufina: Rufina, times;
 $sintony: Sintony, sans-serif;
@@ -121,7 +131,8 @@ html,body{
       @include animation-delay(0.3s);
     }
     nav{
-      position: absolute;
+      position: fixed;
+      z-index: 1; 
       width: 98%;
       display: flex;
       align-items :center;
@@ -195,9 +206,10 @@ html,body{
 
 
     ul.route{
-      position: absolute;
+      position: fixed;
       right: 32px;
-      top: 135vh;
+      top: 35vh;
+      z-index: 1;
       li{
         list-style-type: none;
         width: 10px;
@@ -357,7 +369,7 @@ html,body{
         @include transform(scale(1.1));
       }
       .card-title{
-          background-color: rgba(182, 102, 31, 0.7);
+          background-color: rgba(112, 58, 17, 0.7);
       }
     }
   }
@@ -402,13 +414,13 @@ html,body{
   background-color: #f7aa66 !important;
   .header-article{
     h1{
-      color: #B6661F;
+      color: #703a11;
     }
   }
   .back-button{
 
     h2{
-      color: #B6661F;
+      color: #703a11;
     }
     div{
         background: url(../images/left-arrow-road.svg) no-repeat;
@@ -417,7 +429,7 @@ html,body{
   }
   .article-section{
     h1{
-      color: #B6661F;
+      color: #703a11;
     }
   }
 }
@@ -518,7 +530,6 @@ html,body{
         #map{
           width: 100%;
           padding: 20px;
-          margin:  -180px 0 0 0;
         }
       }
     }
@@ -528,6 +539,7 @@ html,body{
       font-weight: 700;
       margin-bottom: 70px;
       margin-top: 40px;
+      line-height:36px;
     }
     .section-2{
       p{
