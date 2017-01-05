@@ -29,9 +29,22 @@
     <main>
        <!-- INNER HEADERS -->
       <nav>
-        <h3>Marco Polo</h3>
         <button>Journal</button>
       </nav>
+
+      <div class="journal">
+          <h1>Des routes et des étapes</h1>
+          <p>Nous avons sélectionné pour vous des étapes de la route de la soie que vous pouvez redécouvrir sous 3 angles différents : aventure, culture et tourisme. Naviguez de ville en ville pour découvrir des informations sur chaque étape.</p>
+          <div class="route-journal">
+            <p>Venise</p>
+            <p>Istanbul</p>
+            <p>Nishapur</p>
+            <p>Kashgar</p>
+            <p>Dunhuang</p>
+            <p>Beijing</p>
+          </div>
+          <div class="back">Retour au trajet</div>
+      </div>
 
       <ul class="route">
         <li class="active" id="e1"><p>Venise</p></li>
@@ -122,6 +135,15 @@
     <script src="./scripts/javascript.fullPage.js"></script>
 
     <script>
+        // basic clicks
+        document.body.querySelector("nav button").addEventListener("click", function(){
+            document.querySelector(".journal").style.display = "block";
+        });
+
+        document.body.querySelector(".journal .back").addEventListener("click", function(){
+            document.querySelector(".journal").style.display = "none";
+        });
+
         // main animate section
         function toggleElements(elm, route){
           var elmH1 = elm.querySelector('h1');
@@ -194,6 +216,14 @@
           //callbacks
           'onLeave': function(index, nextIndex, direction){
             // enter conditions
+            if(index == 1 && direction == "down"){
+              document.body.querySelector(".route").style.opacity = 1;
+              document.body.querySelector("nav").style.opacity = 1;
+            }
+            if(index == 2 && direction == "up"){
+              document.body.querySelector(".route").style.opacity = 0;
+              document.body.querySelector("nav").style.opacity = 0;
+            }
             if(index == 1 && direction == "down" || index == 3 && direction == "up"){
               let elm = document.body.querySelector('#section-1 .elements-section');
               let route = document.body.querySelector('.route #e1');
