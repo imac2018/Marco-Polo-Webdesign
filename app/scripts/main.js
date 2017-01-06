@@ -18,7 +18,7 @@ document.body.querySelector('.header button').addEventListener('click', function
 });
 
 document.body.querySelector('#section-1 button').addEventListener('mouseenter', function(){
-  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_venise.jpg")';
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("./images/bg_venise.jpg")';
 });
 document.body.querySelector('#section-1 button').addEventListener('mouseleave', function(){
   this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
