@@ -22,7 +22,7 @@ $red: #9d1c12;
 
 /* base styles*/
 html,body{
-  background: #000;
+  background: #f77363;
   width: 100%;
   overflow-x: hidden;
 }
@@ -47,7 +47,7 @@ html,body{
       margin-top: -15px !important;
     }
   }
-  background: url('../images/background.gif') no-repeat;
+  background: url('../images/background2.gif') no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -553,17 +553,29 @@ html,body{
         margin-top: 190px;
       }
     }
-    .travel-card{
-      background: url('../images/travel-bg.jpg') no-repeat;
+    .venise-bg-1{
+      background: url('../images/venise-bg-1.jpg') no-repeat;
       background-size: cover;
+    }
+    .venise-bg-2{
+      background: url('../images/venise-bg-2.jpg') no-repeat;
+      background-size: cover;
+    }
+    .venise-bg-3{
+      background: url('../images/venise-bg-3.jpg') no-repeat;
+      background-size: cover;
+    }
+    .travel-card{
       margin-left: 10px;
+      @include transition(0.3s all ease-in-out);
+      &:hover{
+        @include transform(scale(1.1));
+      }
       .card-title{
           background-color: rgba(12, 60, 74, 0.7);
       }
     }
     .culture-card{
-      background: url('../images/culture-bg.jpg') no-repeat;
-      background-size: cover;
       margin-left: 5px;
       margin-right: 5px;
       @include transition(0.3s all ease-in-out);
@@ -575,8 +587,6 @@ html,body{
       }
     }
     .road-card{
-      background: url('../images/road-bg.jpg') no-repeat;
-      background-size: cover;
       margin-right: 10px;
       @include transition(0.3s all ease-in-out);
       &:hover{
@@ -624,6 +634,58 @@ html,body{
   }
 }
 // PAGE ARTICLE
+.color-green{
+  background-color: #4cb56d !important;
+  .article{
+  background-color: #4cb56d !important;
+  }
+  .header-article{
+    h1{
+      color: #0e5725;
+    }
+  }
+  .back-button{
+
+    h2{
+      color: #0e5725;
+    }
+    div{
+        background: url(../images/left-arrowG.svg) no-repeat;
+        background-size: cover;
+    }
+  }
+  .article-section{
+    h1{
+      color: #0e5725;
+    }
+  }
+}
+.color-blue{
+  background-color: #428598 !important;
+  .article{
+  background-color: #428598 !important;
+  }
+  .header-article{
+    h1{
+      color: #0c3c4a;
+    }
+  }
+  .back-button{
+
+    h2{
+      color: #0c3c4a;
+    }
+    div{
+        background: url(../images/left-arrowB.svg) no-repeat;
+        background-size: cover;
+    }
+  }
+  .article-section{
+    h1{
+      color: #0c3c4a;
+    }
+  }
+}
 .color-orange{
   background-color: #f7aa66 !important;
   .header-article{
@@ -648,12 +710,40 @@ html,body{
   }
 }
 .article{
+  @media (max-width: 1050px){
+    .gmaps-text{
+      flex-direction: column !important;
+      p{
+        margin-bottom: 15px !important;
+        width: 100% !important;
+      }
+      #map{
+        width: 85% !important;
+        height: 300px !important;
+      }
+    }
+    .img-text{
+      flex-direction: column !important;
+      p{
+        margin-top: 15px !important;
+        width: 100% !important;
+      }
+      .img-article{
+        height: 350px !important;
+      }
+    }
+    .footer-article{
+      flex-direction: column !important;
+      .text-footer h1{
+        font-size: 1.5em !important;
+      }
+    }
+  }
   width: 80vw;
   margin: auto;
   height: inherit;
   display: flex;
   flex-direction: column;
-  background-color: #f7aa66 !important;
   align-items: center;
   .header-article{
     padding: 70px 70px 35px 70px;
@@ -698,12 +788,28 @@ html,body{
             width: 35px;
             height: 50px;
           }
+          .architecture{
+            background: url(../images/architecture.svg) no-repeat;
+            background-size: contain;
+          }
           .mountain{
             background: url(../images/mountain.svg) no-repeat;
             background-size: contain;
           }
+          .restaurant{
+            background: url(../images/restaurant.svg) no-repeat;
+            background-size: contain;
+          }
           .location{
             background: url(../images/location.svg) no-repeat;
+            background-size: contain;
+          }
+          .locationB{
+            background: url(../images/locationB.svg) no-repeat;
+            background-size: contain;
+          }
+          .locationG{
+            background: url(../images/locationG.svg) no-repeat;
             background-size: contain;
           }
           h1{
@@ -757,7 +863,7 @@ html,body{
     }
     .section-2{
       p{
-          line-height:36px;
+        line-height:36px;
       }
       .img-text{
         display: flex;
@@ -768,33 +874,56 @@ html,body{
           line-height:36px;
           margin:0;
         }
-
+        .venise-img-1{
+          background: url("../images/venise-img-1.jpg") no-repeat;
+          background-size: cover;
+        }
+        .venise-img-2{
+          background: url("../images/venise-img-2.jpg") no-repeat;
+          background-size: cover;
+        }
+        .venise-img-3{
+          background: url("../images/venise-img-3.jpg") no-repeat;
+          background-size: cover;
+        }
         .img-article{
           width: 100%;
           height: auto;
-          background: url(../images/img-article.jpg);
-          background-size: cover;
           margin-right: 25px
         }
       }
     }
   }
   .footer-article{
-    background: url(../images/bg-footer-article.jpg) no-repeat;
-    background-size: cover;
     width:100vw;
     display: flex;
     flex-direction: row;
+    a{
+      text-decoration: none;
+      width: 50vw;
+    }
+    .venise-bg-1{
+      background: url('../images/venise-bg-1.jpg') no-repeat;
+      background-size: cover;
+    }
+    .venise-bg-2{
+      background: url('../images/venise-bg-2.jpg') no-repeat;
+      background-size: cover;
+    }
+    .venise-bg-3{
+      background: url('../images/venise-bg-3.jpg') no-repeat;
+      background-size: cover;
+    }
     .text-footer{
       padding: 15px 0;
-      width:100vw;
+      width:50vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       &:hover{
         cursor: pointer;
         h2, h1{
-          @include transform(translateX(-15px));
+          @include transform(translateX(10px));
         }
       }
       h2{
@@ -808,7 +937,7 @@ html,body{
         margin: 0;
         font-family: $rufina;
         font-weight: 700;
-        font-size: 3em;
+        font-size: 2.3em;
         color: #fff;
         @include transition(0.2s all ease-in-out);
       }

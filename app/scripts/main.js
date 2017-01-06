@@ -18,8 +18,38 @@ document.body.querySelector('.header button').addEventListener('click', function
 });
 
 document.body.querySelector('#section-1 button').addEventListener('mouseenter', function(){
-  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_asia.jpg")';
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_venise.jpg")';
 });
 document.body.querySelector('#section-1 button').addEventListener('mouseleave', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
+});
+document.body.querySelector('#section-2 button').addEventListener('mouseenter', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_constantinople.jpg")';
+});
+document.body.querySelector('#section-2 button').addEventListener('mouseleave', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
+});
+document.body.querySelector('#section-3 button').addEventListener('mouseenter', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_nishapur.jpg")';
+});
+document.body.querySelector('#section-3 button').addEventListener('mouseleave', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
+});
+document.body.querySelector('#section-4 button').addEventListener('mouseenter', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_kashgar.jpg")';
+});
+document.body.querySelector('#section-4 button').addEventListener('mouseleave', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
+});
+document.body.querySelector('#section-5 button').addEventListener('mouseenter', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_dunhuang.jpg")';
+});
+document.body.querySelector('#section-5 button').addEventListener('mouseleave', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
+});
+document.body.querySelector('#section-6 button').addEventListener('mouseenter', function(){
+  this.parentElement.parentElement.parentElement.parentElement.style.background = 'url("../images/bg_beijing.jpg")';
+});
+document.body.querySelector('#section-6 button').addEventListener('mouseleave', function(){
   this.parentElement.parentElement.parentElement.parentElement.style.background = '#f77363';
 });
