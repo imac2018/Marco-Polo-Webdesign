@@ -91,17 +91,20 @@ html,body{
   main{
     .journal{
       display: none;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
       position: fixed;
       z-index: 99;
       width: 100vw;
       height: 100vh;
-      background: url("../images/background-journal.jpg") no-repeat;
-      background-size: cover;
-      padding: 30px;
+      background: rgba(157, 28, 18,0.9);
       h1{
         font-family: $rufina;
         font-size: 2.5em;
-        color: $red;
+        color: #f8f8f8;
+        margin-top: 110px;
       }
       .back{
         position: absolute;
@@ -134,10 +137,11 @@ html,body{
         max-width: 460px;
         font-family: $sintony;
         font-size: 1.1em;
-        color: $red;
+        color: #f8f8f8;
         line-height: 35px;
       }
       .route-journal{
+        display: none;
         p{
           color: #f8f8f8;
           @include transition(0.3s all ease-in-out);
