@@ -1,0 +1,206 @@
+<!doctype html><html class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seta - Venise - Découvrir le pays</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- Place favicon.ico in the root directory --><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/main.css"><script src="scripts/vendor/modernizr.js"></script></head><body><!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><main class="color-blue"><section class="article"><div class="article-elements"><div class="header-article"><a href="venise.html"><div class="back-button"><div></div><h2>Venise</h2></div></a><h1>Du tourisme entre terre et mer</h1><div class="infos"><ul><li><div class="icon locationB"></div><h1>Italie</h1></li><li><div class="icon restaurant"></div><h1>1300 restaurants</h1></li></ul></div></div><div class="main-article"><div class="article-section gmaps-section"><h1>Tout près de la France</h1><div class="gmaps-text"><p>Venise n’est pas loin de Paris, environ 1000 kilomètres, ce qui fait à peu près 1h30 d’avion. L’aéroport principal de Venise Marco Polo est tout près de la lagune, alors que celui de Trevise est à environ 40 min de bus. Les avions Ryan Air au départ de Beauvais atterrissent à Trevise. Compter 14 euros l’A/R de bus jusqu’aux portes de l’île.</p><div id="map"></div></div></div><h4>A Venise, pas de voiture, les vélos sont interdits sur l’île (sauf sur l’île du Lido), pas de deux roues, seulement des bateaux, et nos jambes.</h4><div class="article-section section-2"><h1>Se restaurer à Venise</h1><div class="img-text"><div class="img-article venise-img-3"></div><p>Pour manger à Venise, il faut bien être attentif aux prix pratiqués. Si vous allez place St Marc, vous trouverez les cafés à 15 euros, la coupe de champagne à 31 euros et le petit déjeuner à 40 euros… C’est mythique apparemment.</p></div><p class="full-text">Mais vous devriez garder votre budget pour faire plein d’autres choses… Justement dans le quartier Castello, pas touristique du tout, il y a un marché tous les jours, avec des produits frais, que vous pourrez cuisiner chez vous, comme les vénitiens, si vous avez pris un appartement. Sinon, les petits cafés servent des pizzas à mois de 7 euros, ou des plats de pâtes très abordables. Ne passez pas à coté de leur délicieuse mozzarella, et de la burrata. Mais aussi l’huile d’olive, les risotto, les tomates, le jambon.</p></div></div></div><div class="footer-article"><a href="venise-article-2.html"><div class="text-footer venise-bg-2"><h2>Article précédent</h2><h1>Un coeur historique</h1></div></a><a href="venise-article-1.html"><div class="text-footer venise-bg-1"><h2>Article suivant</h2><h1>Un paysage tourné vers la mer</h1></div></a></div></section></main><script type="text/javascript">var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 45.434531,  lng: 12.339648},
+          zoom: 16,
+          draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: false,
+          disableDefaultUI: true,
+          styles :
+          [
+            {
+              "featureType": "administrative",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "color": "#ffffff"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "color": "#0c3c4a"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.country",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.country",
+              "elementType": "labels.text",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.land_parcel",
+              "elementType": "labels",
+              "stylers": [
+                {
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.neighborhood",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.province",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "landscape",
+              "stylers": [
+                {
+                  "color": "#0c3c4a"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "stylers": [
+                {
+                  "color": "#0c3c4a"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "elementType": "labels.text",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "stylers": [
+                {
+                  "color": "#ffffff"
+                }
+              ]
+            },
+            {
+              "featureType": "road.arterial",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway.controlled_access",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "transit",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "transit",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "stylers": [
+                {
+                  "color": "#428598"
+                }
+              ]
+            }
+          ]
+        });
+      }</script><script async defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUHG0dDpEq1qchIt9zrJG-P22i8BQfeI&callback=initMap"></script></body></html>
