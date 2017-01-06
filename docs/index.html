@@ -1,0 +1,186 @@
+<!doctype html><html class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La route de la soie</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- Place favicon.ico in the root directory --><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/main.css"><script src="scripts/vendor/modernizr.js"></script></head><body><!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><main><!-- INNER HEADERS --><nav><button>Route</button></nav><div class="journal"><h1>Des routes et des étapes</h1><p>Nous avons sélectionné pour vous des étapes de la route de la soie que vous pouvez redécouvrir sous 3 angles différents : aventure, culture et tourisme. Naviguez de ville en ville pour découvrir des informations sur chaque étape.</p><div class="route-journal"><p>Venise</p><p>Istanbul</p><p>Nishapur</p><p>Kashgar</p><p>Dunhuang</p><p>Beijing</p></div><div class="back">Retour au trajet</div></div><ul class="route"><li class="active" id="e1"><p>Venise</p></li><li id="e2"><p>Istanbul</p></li><li id="e3"><p>Nishapur</p></li><li id="e4"><p>Kashgar</p></li><li id="e5"><p>Dunhuang</p></li><li id="e6"><p>Beijing</p></li></ul><!-- END INNER HEADERS --><!-- SECTIONS --><div id="fullpage" class="main-section"><div class="section header"><h1>Seta</h1><h2>Redécouvrez la route de la soie</h2><button>Commencer l'aventure</button></div><div class="section mySection" id="section-1"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 1 :</h2><h1>Venise</h1><h3 class="left-anime">Ville de légèreté et de sensation</h3><a class="left-anime" href="venise.html"><button class="left-anime">Découvrir cette étape</button></a></div></div></div><div class="section mySection" id="section-2"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 2 :</h2><h1>Istanbul</h1><h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3><button class="left-anime">Découvrir cette étape</button></div></div></div><div class="section mySection" id="section-3"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 3 :</h2><h1>Nishapur</h1><h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3><button class="left-anime">Découvrir cette étape</button></div></div></div><div class="section mySection" id="section-4"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 4 :</h2><h1>Kashgar</h1><h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3><button class="left-anime">Découvrir cette étape</button></div></div></div><div class="section mySection" id="section-5"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 5 :</h2><h1>Dunhuang</h1><h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3><button class="left-anime">Découvrir cette étape</button></div></div></div><div class="section mySection" id="section-6"><div class="content"><div class="elements-section"><h2 class="left-anime">étape 6 :</h2><h1>Beijing</h1><h3 class="left-anime">Quand j'ai découvert ce qu'était les épices d'Asie</h3><button class="left-anime">Découvrir cette étape</button></div></div></div><!-- END SECTIONS --></div></main><script src="scripts/main.js"></script><!-- Other --><script src="./scripts/javascript.fullPage.js"></script><script>// basic clicks
+        document.body.querySelector("nav button").addEventListener("click", function(){
+            document.querySelector(".journal").style.display = "block";
+        });
+
+        document.body.querySelector(".journal .back").addEventListener("click", function(){
+            document.querySelector(".journal").style.display = "none";
+        });
+
+        // main animate section
+        function toggleElements(elm, route){
+          var elmH1 = elm.querySelector('h1');
+          elm.classList.add('toggleOpacity');
+
+          // route setup
+          document.querySelector('.route .active').classList.remove('active');
+          route.classList.add('active');
+
+          // title anime
+          var stringToletters = elmH1.textContent.split('');
+          elmH1.textContent = '';
+          for (let i of stringToletters){
+              let span = document.createElement('span');
+              span.appendChild(document.createTextNode(i));
+              elmH1.appendChild(span);
+          }
+          var letters = elmH1.querySelectorAll('span');
+
+          for(r = 0; r < letters.length; r++){
+            (function(r){
+                setTimeout(function(){
+                  letters[r].classList.add('toggleRightAnime');
+                }, 70 * r);
+            }(r));
+          }
+
+          // other elements anime
+          var leftAnime = elm.querySelectorAll('.left-anime');
+          for(let i of leftAnime){
+            i.classList.add('toggleLeftAnime');
+          }
+        }
+
+        function removeElements(elm){
+          var elmH1 = elm.querySelector('h1');
+          var letters = elmH1.querySelectorAll('span');
+          var leftAnime = elm.querySelectorAll('.left-anime');
+
+          elm.classList.remove('toggleOpacity');
+          for (let i of letters){
+            i.classList.remove('toggleRightAnime');
+          }
+          for (let i of leftAnime){
+            i.classList.remove('toggleLeftAnime');
+          }
+        }
+
+        // navigation
+        fullpage.initialize('#fullpage', {
+          'anchors':['home','venise','istanbul','nishapur','kashgar','dunhuang','beijing'],
+          'navigation': false,
+          'slidesNavigation': false,
+          'scrollBar': false,
+
+          //scrolling
+          'css3': true,
+          'scrollingSpeed': 700,
+          'autoScrolling': true,
+          'easingcss3': 'ease',
+          'loopHorizontal': false,
+          'touchSensitivity': 5,
+          //Accessibility
+          'keyboardScrolling': true,
+          'recordHistory': true,
+
+          //design
+          'controlArrows': true,
+
+          //callbacks
+          'onLeave': function(index, nextIndex, direction){
+            // enter conditions
+            if(index == 1 && direction == "down"){
+              document.body.querySelector(".route").style.opacity = 1;
+              document.body.querySelector("nav").style.opacity = 1;
+            }
+            if(index == 2 && direction == "up"){
+              document.body.querySelector(".route").style.opacity = 0;
+              document.body.querySelector("nav").style.opacity = 0;
+            }
+            if(index == 1 && direction == "down" || index == 3 && direction == "up"){
+              let elm = document.body.querySelector('#section-1 .elements-section');
+              let route = document.body.querySelector('.route #e1');
+              toggleElements(elm,route);
+            }
+            if(index == 2 && direction == "down" || index == 4 && direction == "up"){
+              let elm = document.body.querySelector('#section-2 .elements-section');
+              let route = document.body.querySelector('.route #e2');
+              toggleElements(elm,route);
+            }
+            if(index == 3 && direction == "down" || index == 5 && direction == "up"){
+              let elm = document.body.querySelector('#section-3 .elements-section');
+              let route = document.body.querySelector('.route #e3');
+              toggleElements(elm,route);
+            }
+            if(index == 4 && direction == "down" || index == 6 && direction == "up"){
+              let elm = document.body.querySelector('#section-4 .elements-section');
+              let route = document.body.querySelector('.route #e4');
+              toggleElements(elm,route);
+            }
+            if(index == 5 && direction == "down" || index == 7 && direction == "up"){
+              let elm = document.body.querySelector('#section-5 .elements-section');
+              let route = document.body.querySelector('.route #e5');
+              toggleElements(elm,route);
+            }
+            if(index == 6 && direction == "down"){
+              let elm = document.body.querySelector('#section-6 .elements-section');
+              let route = document.body.querySelector('.route #e6');
+              toggleElements(elm,route);
+            }
+          },
+          'afterLoad': function(anchorLink, index){
+            // leave conditions
+            if(index != 2){
+              let elm = document.body.querySelector('#section-1 .elements-section');
+              removeElements(elm);
+            }
+            if(index != 3){
+              let elm = document.body.querySelector('#section-2 .elements-section');
+              removeElements(elm);
+            }
+            if(index != 4){
+              let elm = document.body.querySelector('#section-3 .elements-section');
+              removeElements(elm);
+            }
+            if(index != 5){
+              let elm = document.body.querySelector('#section-4 .elements-section');
+              removeElements(elm);
+            }
+            if(index != 6){
+              let elm = document.body.querySelector('#section-5 .elements-section');
+              removeElements(elm);
+            }
+            if(index != 7){
+              let elm = document.body.querySelector('#section-6 .elements-section');
+              removeElements(elm);
+            }
+          }
+        });
+        document.body.querySelector('.route li#e1').addEventListener('click', function(){
+          fullpage.moveTo(2);
+          let elm = document.body.querySelector('#section-1 .elements-section');
+          let route = document.body.querySelector('.route #e1');
+          toggleElements(elm,route);
+        });
+        document.body.querySelector('.route li#e2').addEventListener('click', function(){
+          fullpage.moveTo(3);
+          let elm = document.body.querySelector('#section-2 .elements-section');
+          let route = document.body.querySelector('.route #e2');
+          toggleElements(elm,route);
+        });
+        document.body.querySelector('.route li#e3').addEventListener('click', function(){
+          fullpage.moveTo(4);
+          let elm = document.body.querySelector('#section-3 .elements-section');
+          let route = document.body.querySelector('.route #e3');
+          toggleElements(elm,route);
+        });
+        document.body.querySelector('.route li#e4').addEventListener('click', function(){
+          fullpage.moveTo(5);
+          let elm = document.body.querySelector('#section-4 .elements-section');
+          let route = document.body.querySelector('.route #e4');
+          toggleElements(elm,route);
+        });
+        document.body.querySelector('.route li#e5').addEventListener('click', function(){
+          fullpage.moveTo(6);
+          let elm = document.body.querySelector('#section-5 .elements-section');
+          let route = document.body.querySelector('.route #e5');
+          toggleElements(elm,route);
+        });
+        document.body.querySelector('.route li#e6').addEventListener('click', function(){
+          fullpage.moveTo(7);
+          let elm = document.body.querySelector('#section-6 .elements-section');
+          let route = document.body.querySelector('.route #e6');
+          toggleElements(elm,route);
+        });</script></body></html>
