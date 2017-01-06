@@ -17,12 +17,19 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 svg{
   position: absolute;
   top: 0;
-  z-index:-1;
+  z-index:50;
   left: 0;
+  width: 100vw;
+  height: 600vh;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 5s linear forwards;
-
+  animation: dash 5s linear;
+  animation-iteration-count:infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 /* variables */
 $rufina: Rufina, times;
