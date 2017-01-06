@@ -14,7 +14,16 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .gmnoprint div {
     background:none !important;
 }
+svg{
+  position: absolute;
+  top: 0;
+  z-index:-1;
+  left: 0;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
 
+}
 /* variables */
 $rufina: Rufina, times;
 $sintony: Sintony, sans-serif;
@@ -738,6 +747,9 @@ html,body{
     }
     .footer-article{
       flex-direction: column !important;
+      .text-footer{
+        width: 100vw !important;
+      }
       .text-footer h1{
         font-size: 1.5em !important;
       }
@@ -893,7 +905,8 @@ html,body{
         .img-article{
           width: 100%;
           height: auto;
-          margin-right: 25px
+          margin-right: 25px;
+          min-height: 450px;
         }
       }
     }
@@ -904,7 +917,6 @@ html,body{
     flex-direction: row;
     a{
       text-decoration: none;
-      width: 50vw;
     }
     .venise-bg-1{
       background: url('../images/venise-bg-1.jpg') no-repeat;
